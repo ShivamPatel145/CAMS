@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Application Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="app" class="container mx-auto p-4">
+        <header class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-t-lg shadow-md">
+            <h1 class="text-3xl font-bold mb-4">College Application Management System</h1>
+            <nav>
+                <button id="signupBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2">Sign Up</button>
+                <button id="signinBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Sign In</button>
+                <button id="dashboardBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mr-2" style="display: none;">Dashboard</button>
+                <button id="logoutBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" style="display: none;">Logout</button>
+            </nav>
+        </header>
+
+        <main class="bg-white p-6 rounded-b-lg shadow-md">
+            <section id="authForms" class="mb-8">
+                <div id="signupForm" class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+                    <form id="signup" class="space-y-4">
+                        <input type="email" id="signupEmail" placeholder="Email" required class="w-full p-2 border border-gray-300 rounded">
+                        <input type="password" id="signupPassword" placeholder="Password" required class="w-full p-2 border border-gray-300 rounded">
+                        <input type="text" id="signupId" placeholder="Student/Faculty ID" required class="w-full p-2 border border-gray-300 rounded">
+                        <select id="signupRole" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="student">Student</option>
+                            <option value="faculty">Faculty</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Sign Up</button>
+                    </form>
+                </div>
+
+                <div id="signinForm" class="mb-8" style="display: none;">
+                    <h2 class="text-2xl font-bold mb-4">Sign In</h2>
+                    <form id="signin" class="space-y-4">
+                        <input type="email" id="signinEmail" placeholder="Email" required class="w-full p-2 border border-gray-300 rounded">
+                        <input type="password" id="signinPassword" placeholder="Password" required class="w-full p-2 border border-gray-300 rounded">
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Sign In</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="dashboard" style="display: none;">
+                <h2 class="text-2xl font-bold mb-4">Dashboard</h2>
+                <div id="userInfo" class="bg-gray-200 p-4 rounded mb-6"></div>
+                <div id="applicationForm" class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">Submit Application</h3>
+                    <form id="submitApplication" class="space-y-4">
+                        <select id="recipient" required class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select Recipient</option>
+                        </select>
+                        <select id="applicationType" required class="w-full p-2 border border-gray-300 rounded">
+                            <option value="leaveRequest">Leave Request</option>
+                            <option value="documentRequest">Document Request</option>
+                            <option value="certificate">Certificate Request</option>
+                        </select>
+                        <textarea id="applicationContent" placeholder="Application details" required class="w-full p-2 border border-gray-300 rounded h-32"></textarea>
+                        <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Submit Application</button>
+                    </form>
+                </div>
+                <div id="applicationList">
+                    <h3 class="text-xl font-bold mb-4">Applications</h3>
+                    <ul id="applications" class="space-y-4"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
