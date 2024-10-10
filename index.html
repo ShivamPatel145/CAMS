@@ -55,6 +55,7 @@
                             <option value="">Select Recipient</option>
                         </select>
                         <select id="applicationType" required class="w-full p-2 border border-gray-300 rounded">
+                            <option value="">Select Application Type</option>
                             <option value="leaveRequest">Leave Request</option>
                             <option value="documentRequest">Document Request</option>
                             <option value="certificate">Certificate Request</option>
@@ -63,9 +64,11 @@
                         <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Submit Application</button>
                     </form>
                 </div>
-                <div id="applicationList">
+                <div id="applicationList" class="mt-8">
                     <h3 class="text-xl font-bold mb-4">Applications</h3>
-                    <ul id="applications" class="space-y-4"></ul>
+                    <ul id="applications" class="space-y-4">
+                        <!-- Applications will be dynamically inserted here -->
+                    </ul>
                 </div>
             </section>
         </main>
